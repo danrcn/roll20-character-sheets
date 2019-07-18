@@ -892,30 +892,6 @@ button[type=roll] * {
     width: 180px;
 }
 
-.sheet-ccoin {
-    border: 1px solid #666;
-    border-radius: 5px;
-    margin-top: 10px;
-    background-color: white;
-    position: relative;
-    left: -5px;
-}
-
-.sheet-ccoin span {
-    display: inline-block;
-    color: #A0A0A0;
-    margin-top: 0px;
-    margin-left: 5px;
-    width: 15px;
-}
-
-.sheet-ccoin input {
-    display: inline-block;
-    font-size: 12px;
-    padding: 0px;
-    width: 80px;
-}
-
 .sheet-equipment {
     position: relative;
     min-height: 276px;
@@ -953,11 +929,6 @@ button[type=roll] * {
     min-height: 48px;
     height: 48px;
 }
-
-/*.sheet-col3 {
-    width: 245px;
-    margin-left: -3px;
-}*/
 
 .sheet-footer {
     -webkit-user-select: auto;
@@ -1144,6 +1115,7 @@ button[type=roll] * {
 .sheet-textbox:hover > .sheet-options-flag + span,
 .sheet-proficiency:hover .sheet-options-flag + span,
 .sheet-item:hover .sheet-inventorysubflag + span,
+.sheet-coin:hover .sheet-inventorysubflag + span,
 .sheet-pc .sheet-trait:hover .sheet-output,
 .sheet-pc .sheet-header:hover .sheet-options-flag + span
 {
@@ -1233,6 +1205,7 @@ button[type=roll] * {
 }
 
 .sheet-item .sheet-subitem,
+.sheet-coin .sheet-subitem,
 .sheet-header .sheet-options
 {
     display: none;
@@ -1264,7 +1237,8 @@ button[type=roll] * {
 .sheet-textbox .sheet-options-flag:checked ~ .sheet-options,
 .sheet-proficiencies .sheet-options-flag:checked ~ .sheet-options,
 .sheet-traits .sheet-options-flag:checked ~ .sheet-options,
-.sheet-item .sheet-inventorysubflag:checked ~ .sheet-subitem
+.sheet-item .sheet-inventorysubflag:checked ~ .sheet-subitem,
+.sheet-coin .sheet-inventorysubflag:checked ~ .sheet-subitem
 {
     display: inherit;
 }
@@ -1436,7 +1410,6 @@ button[type=roll] * {
     content: "" !important;
 }
 
-span.sheet-spellritual,
 span.sheet-spellconcentration 
 {
     display: none;
@@ -1450,12 +1423,6 @@ span.sheet-spellconcentration
     height: 10px;
     top: 0px;
     line-height: 10px;
-}
-
-.sheet-spellicon_flag:not([value="none"]) + .sheet-body .sheet-spell .sheet-display .sheet-spellritual:not([value="0"]) ~ span.sheet-spellritual
-{
-    display: inline-block;
-    right: 11px;
 }
 
 .sheet-spellicon_flag:not([value="none"]) + .sheet-body .sheet-spell .sheet-display .sheet-spellconcentration:not([value="0"]) ~ span.sheet-spellconcentration
@@ -1472,19 +1439,33 @@ span.sheet-spellconcentration
     width: auto;
 }
 
-.sheet-spell .sheet-display .sheet-v,
-.sheet-spell .sheet-display .sheet-s,
-.sheet-spell .sheet-display .sheet-m
+.sheet-spell .sheet-display .sheet-p,
+.sheet-spell .sheet-display .sheet-d,
+.sheet-spell .sheet-display .sheet-c,
+.sheet-spell .sheet-display .sheet-fi,
+.sheet-spell .sheet-display .sheet-fo,
+.sheet-spell .sheet-display .sheet-l,
+.sheet-spell .sheet-display .sheet-n
 {
     display: none;
 }
 
-.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-v:not([value="0"]) ~ .sheet-componentscontainer span.sheet-v, 
-.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-s:not([value="0"]) ~ .sheet-componentscontainer span.sheet-s,
-.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-m:not([value="0"]) ~ .sheet-componentscontainer span.sheet-m 
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-p:not([value="0"]) ~ .sheet-componentscontainer span.sheet-p, 
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-d:not([value="0"]) ~ .sheet-componentscontainer span.sheet-d
+{
+	display: inline;
+	right: 0;
+	font-size:8px;
+}
+
+.sheet-spellicon_flag:not[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-c:not([value="0"]) ~ .sheet-componentscontainer span.sheet-c, 
+.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-fi:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fi,
+.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-fo:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fo,
+.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-l:not([value="0"]) ~ .sheet-componentscontainer span.sheet-l,
+.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-n:not([value="0"]) ~ .sheet-componentscontainer span.sheet-n 
 {
     display: inline;
-    width: initial;
+	right: 1;
     font-size: 8px;
 }
 
@@ -1718,11 +1699,6 @@ span.sheet-spellconcentration
 
 .sheet-spell-container input[name="attr_spelltarget"] {
     width: 199px;
-}
-
-.sheet-spell-container .sheet-spell .sheet-options input[name="attr_spellcomp_materials"] {
-    margin-left: 17px;
-    width: 223px;
 }
 
 .sheet-spell-container input[name="attr_spellduration"] {
@@ -2198,7 +2174,7 @@ span.sheet-spellconcentration
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: center;
-    width: 81%;
+    width: 100%;
 }
 
 .sheet-rolltemplate-atk .sheet-desc span,
@@ -3047,16 +3023,22 @@ span.sheet-spellconcentration
     text-align: center;
 }
 
-.sheet-item .sheet-subitem .sheet-subfield {
+.sheet-item .sheet-subitem .sheet-subfield,
+.sheet-coin .sheet-subitem .sheet-subfield
+{
     font-weight: normal;
+	text-align: left;
     background-color: transparent;
     padding: 0px;
-    width: 112px;
+    width: 130px;
 }
 
-.sheet-item .sheet-subitem .sheet-subtextarea {
+.sheet-item .sheet-subitem .sheet-subtextarea,
+.sheet-coin .sheet-subitem .sheet-subtextarea
+{
     width: calc(100% - 20px);
     font-size: 9px;
+	text-align: left;
     padding: 0px 5px 0px 15px;
     min-height: 32px;
     height: 32px;
@@ -3074,7 +3056,9 @@ span.sheet-spellconcentration
     pointer-events: none;
 }
 
-.sheet-item .sheet-subitem span {
+.sheet-item .sheet-subitem span,
+.sheet-coin .sheet-subitem span
+{
     width: 32px;
     padding: 0px 0px 0px 10px;
     display: inline-block;
@@ -3150,20 +3134,26 @@ span.sheet-spellconcentration
     width: auto;
 }
 
-.sheet-equipment .sheet-item .sheet-subitem .sheet-equipped {
+.sheet-equipment .sheet-item .sheet-subitem .sheet-equipped,
+.sheet-equipment .sheet-money .sheet-coin .sheet-subitem .sheet-equipped
+{
     -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
     width: initial;
     margin-left: 15px;
 }
 
-.sheet-equipment .sheet-item .sheet-subitem .sheet-equippedlabel {
+.sheet-equipment .sheet-item .sheet-subitem .sheet-equippedlabel,
+.sheet-equipment .sheet-coin .sheet-subitem .sheet-equippedlabel
+{
     width: calc(100% - 50px);
     text-align: left;
     padding-left: 5px;
 }
 
-.sheet-equipment .sheet-equippedflag[value="0"] ~ .sheet-item > .sheet-name {
+.sheet-equipment .sheet-equippedflag[value="0"] ~ .sheet-item > .sheet-name,
+.sheet-equipment .sheet-money .sheet-equippedflag[value="0"] ~ .sheet.coin > .sheet-name
+{
     color: #999;
 }
 
@@ -4011,7 +4001,7 @@ span.sheet-spellconcentration
 .sheet-charmancer .sheet-gold_option input[type=number] {
     width: 4.5em;
 }
-.sheet-manver .sheet-yes_spells {
+.sheet-mancer .sheet-yes_spells {
     display: flex;
 }
 .sheet-charmancer button.sheet-mancer_info,
