@@ -835,7 +835,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{v=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{s=1}}">
@@ -2137,8 +2137,8 @@ gear tab ala core/bio/spells tabs.
     <div class="body">
         <div class="col col1">
             <span class="spell-labels">
-                <span data-i18n="slots_total-u" style="margin-right: 45px;"></span>
-                <span data-i18n="slots_remaining-u"></span>
+                <span data-i18n="filler1-u" style="margin-right: 45px;"></span>
+                <span data-i18n="filler2-u"></span>
             </span>
             <div class="spell-level">
                 <div class="level">
@@ -2406,7 +2406,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{p=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{d=1}}">
@@ -2581,6 +2581,10 @@ gear tab ala core/bio/spells tabs.
         </div>
         <div class="col col2">
 
+            <span class="spell-labels">
+                <span data-i18n="slots_total-u" style="margin-right: 45px;"></span>
+                <span data-i18n="slots_remaining-u"></span>
+            </span>
             <div class="spell-level">
                 <div class="level">
                     <span class="label">2</span>
@@ -2623,7 +2627,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{p=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{d=1}}">
@@ -2794,6 +2798,11 @@ gear tab ala core/bio/spells tabs.
                     </div>
                 </fieldset>
             </div>
+
+            <span class="spell-labels">
+                <span data-i18n="slots_total-u" style="margin-right: 45px;"></span>
+                <span data-i18n="slots_remaining-u"></span>
+            </span>
             <div class="spell-level">
                 <div class="level">
                     <span class="label">3</span>
@@ -2836,7 +2845,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{p=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{d=1}}">
@@ -3012,6 +3021,10 @@ gear tab ala core/bio/spells tabs.
         <div class="col col3">
 
 
+            <span class="spell-labels">
+                <span data-i18n="slots_total-u" style="margin-right: 45px;"></span>
+                <span data-i18n="slots_remaining-u"></span>
+            </span>
             <div class="spell-level">
                 <div class="level">
                     <span class="label">4</span>
@@ -3054,7 +3067,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{p=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{d=1}}">
@@ -3226,6 +3239,10 @@ gear tab ala core/bio/spells tabs.
                 </fieldset>
             </div>
 
+            <span class="spell-labels">
+                <span data-i18n="slots_total-u" style="margin-right: 45px;"></span>
+                <span data-i18n="slots_remaining-u"></span>
+            </span>
             <div class="spell-level">
                 <div class="level">
                     <span class="label">5</span>
@@ -3268,7 +3285,7 @@ gear tab ala core/bio/spells tabs.
                             </div>
                             <input type="hidden" name="attr_spellcomp">
                             <div class="row">
-                                <span data-i18n="primer-detonator:-u">PRIMER/DETONATOR:</span>
+                                <span data-i18n="combo:-u">COMBO:</span>
                                 <input type="checkbox" name="attr_spell_primer" value="{{p=1}}">
                                 <span data-i18n="spell-primer">Primer</span>
                                 <input type="checkbox" name="attr_spell_detonator" value="{{d=1}}">
@@ -5168,197 +5185,6 @@ gear tab ala core/bio/spells tabs.
                     </span>
                 </div>
             {{/damage}}
-    </rolltemplate>
-
-    <rolltemplate class="sheet-rolltemplate-mancerroll">
-        <div class="container">
-            <div class="row header">
-                <span>
-                    {{title}}
-                    {{#c1}}
-                        <span>{{c1}}</span>
-                    {{/c1}}
-                </span>
-            </div>
-            {{#r1}}
-                <div class="row">
-                    <span class="desc">Roll 1: </span>
-                    <span class="result">{{r1}}</span>
-                </div>
-            {{/r1}}
-            {{#r2}}
-                <div class="row">
-                    <span class="desc">Roll 2: </span>
-                    <span class="result">{{r2}}</span>
-                </div>
-            {{/r2}}
-            {{#r3}}
-                <div class="row">
-                    <span class="desc">Roll 3: </span>
-                    <span class="result">{{r3}}</span>
-                </div>
-            {{/r3}}
-            {{#r4}}
-                <div class="row">
-                    <span class="desc">Roll 4: </span>
-                    <span class="result">{{r4}}</span>
-                </div>
-            {{/r4}}
-            {{#r5}}
-                <div class="row">
-                    <span class="desc">Roll 5: </span>
-                    <span class="result">{{r5}}</span>
-                </div>
-            {{/r5}}
-            {{#r6}}
-                <div class="row">
-                    <span class="desc">Roll 6: </span>
-                    <span class="result">{{r6}}</span>
-                </div>
-            {{/r6}}
-            <div class="row">
-                <span class="desc">
-                    {{#rollTotal() c1 1}}{{option1}}{{/rollTotal() c1 1}}
-                    {{#rollTotal() c1 2}}{{option2}}{{/rollTotal() c1 2}}
-                    {{#rollTotal() c1 3}}{{option3}}{{/rollTotal() c1 3}}
-                    {{#rollTotal() c1 4}}{{option4}}{{/rollTotal() c1 4}}
-                    {{#rollTotal() c1 5}}{{option5}}{{/rollTotal() c1 5}}
-                    {{#rollTotal() c1 6}}{{option6}}{{/rollTotal() c1 6}}
-                    {{#rollTotal() c1 7}}{{option7}}{{/rollTotal() c1 7}}
-                    {{#rollTotal() c1 8}}{{option8}}{{/rollTotal() c1 8}}
-                    {{#rollTotal() c1 9}}{{option9}}{{/rollTotal() c1 9}}
-                    {{#rollTotal() c1 10}}{{option10}}{{/rollTotal() c1 10}}
-                    {{#rollTotal() c1 11}}{{option11}}{{/rollTotal() c1 11}}
-                    {{#rollTotal() c1 12}}{{option12}}{{/rollTotal() c1 12}}
-                    {{#rollTotal() c1 13}}{{option13}}{{/rollTotal() c1 13}}
-                    {{#rollTotal() c1 14}}{{option14}}{{/rollTotal() c1 14}}
-                    {{#rollTotal() c1 15}}{{option15}}{{/rollTotal() c1 15}}
-                    {{#rollTotal() c1 16}}{{option16}}{{/rollTotal() c1 16}}
-                    {{#rollTotal() c1 17}}{{option17}}{{/rollTotal() c1 17}}
-                    {{#rollTotal() c1 18}}{{option18}}{{/rollTotal() c1 18}}
-                    {{#rollTotal() c1 19}}{{option19}}{{/rollTotal() c1 19}}
-                    {{#rollTotal() c1 20}}{{option20}}{{/rollTotal() c1 20}}
-                </span>
-            </div>
-        </div>
-    </rolltemplate>
-
-	<rolltemplate class="sheet-rolltemplate-mancerhproll">
-        <div class="container">
-            <div class="row header">
-                <span>
-                    {{title}}
-                    {{#c1}}
-                        <span>{{c1}}</span>
-                    {{/c1}}
-                </span>
-            </div>
-            {{#a1}}
-                <div class="row">
-                <span class="desc">Average: </span><span class="result">{{a1}}</span>
-                </div>
-            {{/a1}}
-            {{#r1}}
-                <div class="row">
-                <span class="desc">Roll 1: </span><span class="result">{{r1}}</span>
-                </div>
-            {{/r1}}
-            {{#r2}}
-                <div class="row">
-                    <span class="desc">Roll 2: </span><span class="result">{{r2}}</span>
-                </div>
-            {{/r2}}
-            {{#r3}}
-                <div class="row">
-                    <span class="desc">Roll 3: </span><span class="result">{{r3}}</span>
-                </div>
-            {{/r3}}
-            {{#r4}}
-                <div class="row">
-                    <span class="desc">Roll 4: </span><span class="result">{{r4}}</span>
-                </div>
-            {{/r4}}
-            {{#r5}}
-                <div class="row">
-                    <span class="desc">Roll 5: </span><span class="result">{{r5}}</span>
-                </div>
-            {{/r5}}
-            {{#r6}}
-                <div class="row">
-                    <span class="desc">Roll 6: </span><span class="result">{{r6}}</span>
-                </div>
-            {{/r6}}
-            {{#r7}}
-                <div class="row">
-                    <span class="desc">Roll 7: </span><span class="result">{{r7}}</span>
-                </div>
-            {{/r7}}
-            {{#r8}}
-                <div class="row">
-                    <span class="desc">Roll 8: </span><span class="result">{{r8}}</span>
-                </div>
-            {{/r8}}
-            {{#r9}}
-                <div class="row">
-                    <span class="desc">Roll 9: </span><span class="result">{{r9}}</span>
-                </div>
-            {{/r9}}
-            {{#r10}}
-                <div class="row">
-                    <span class="desc">Roll 10: </span><span class="result">{{r10}}</span>
-                </div>
-            {{/r10}}
-            {{#r11}}
-                <div class="row">
-                    <span class="desc">Roll 11: </span><span class="result">{{r11}}</span>
-                </div>
-            {{/r11}}
-                        {{#r12}}
-                <div class="row">
-                    <span class="desc">Roll 12: </span><span class="result">{{r12}}</span>
-                </div>
-            {{/r12}}
-            {{#r13}}
-                <div class="row">
-                    <span class="desc">Roll 13: </span><span class="result">{{r13}}</span>
-                </div>
-            {{/r13}}
-            {{#r14}}
-                <div class="row">
-                    <span class="desc">Roll 14: </span><span class="result">{{r14}}</span>
-                </div>
-            {{/r14}}
-            {{#r15}}
-                <div class="row">
-                    <span class="desc">Roll 15: </span><span class="result">{{r15}}</span>
-                </div>
-            {{/r15}}
-            {{#r16}}
-                <div class="row">
-                    <span class="desc">Roll 16: </span><span class="result">{{r16}}</span>
-                </div>
-            {{/r16}}
-            {{#r17}}
-                <div class="row">
-                    <span class="desc">Roll 17: </span><span class="result">{{r17}}</span>
-                </div>
-            {{/r17}}
-            {{#r18}}
-                <div class="row">
-                    <span class="desc">Roll 18: </span><span class="result">{{r18}}</span>
-                </div>
-            {{/r18}}
-            {{#r19}}
-                <div class="row">
-                    <span class="desc">Roll 19: </span><span class="result">{{r19}}</span>
-                </div>
-            {{/r19}}
-            {{#r20}}
-                <div class="row">
-                    <span class="desc">Roll 20: </span><span class="result">{{r20}}</span>
-                </div>
-            {{/r20}}
-        </div>
     </rolltemplate>
 </div>
 
@@ -7592,7 +7418,6 @@ gear tab ala core/bio/spells tabs.
                     update[prof.replace(/ /g, "_").toLowerCase() + "_flat"] = numUses(value);
                 });
             };
-            /**/
         });
 
         return {
