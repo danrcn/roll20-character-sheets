@@ -1,19 +1,3 @@
-<!-- Things to do: 
-*Make mod slots for equipped armor a repeating inventory field to allow for multiple mods, 
-*make sure all spell attacks are rolling,
-*double check formatting for spell attacks with descriptions,
-fix spell school icons,
-*fix primer/detonator both displaying,
-*make the dot to show mods visible again,
-tweak function "update_ac" to account for mods in equiped gear, 
-adjust spell slots per level to align with PHB standards for Mass Effect,
-fix item weight stats,
-fix Primer types to be visible on the spells in the spells page,
-fix hit dice to reflect appropriate hit dice for the classes,
-ship sheet ala NPC sheet,
-gear tab ala core/bio/spells tabs.
--->
-
 
 <input class="monster_confirm_flag" type="hidden" name="attr_monster_confirm_flag">
 <div class="licensecontainer compendium-drop-target monsters">
@@ -813,7 +797,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -2157,7 +2141,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -2384,7 +2368,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -2605,7 +2589,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -2823,7 +2807,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -3045,7 +3029,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -3263,7 +3247,7 @@ gear tab ala core/bio/spells tabs.
                                 <input type="text" name="attr_spellname">
                             </div>
                             <div class="row">
-                                <span data-i18n="school:-u">SCHOOL:</span>
+                                <span data-i18n="power-type:-u">POWER TYPE:</span>
                                 <select name="attr_spellschool">
                                     <option value="biotic" data-i18n="biotic">Biotic</option>
                                     <option value="tech" data-i18n="tech">Tech</option>
@@ -8498,6 +8482,61 @@ gear tab ala core/bio/spells tabs.
                     update[`${ability}_save_prof`] = 0;
                 });
                 setAttrs(update, {silent: true});
+			//Specific coding for Mass Effect classes
+			} else if (v.class === "Adept") {
+                update = {};
+                update["hitdietype"] = "6";
+                update["spellcasting_ability"] = "1";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
+			} else if (v.class === "Engineer") {
+                update = {};
+                update["hitdietype"] = "8";
+                update["spellcasting_ability"] = "0*";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
+			} else if (v.class === "Infiltrator") {
+                update = {};
+                update["hitdietype"] = "8";
+                update["spellcasting_ability"] = "0*";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
+			} else if (v.class === "Sentinel") {
+                update = {};
+                update["hitdietype"] = "10";
+                update["spellcasting_ability"] = "0*";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
+			} else if (v.class === "Soldier") {
+                update = {};
+                update["hitdietype"] = "10";
+                update["spellcasting_ability"] = "0*";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
+			} else if (v.class === "Vanguard") {
+                update = {};
+                update["hitdietype"] = "12";
+                update["spellcasting_ability"] = "1";
+                abilites.forEach((save) => {
+                    const ability = save.toLowerCase();
+                    update[`${ability}_save_prof`] = 0;
+                });
+                setAttrs(update, {silent: true});
             //Standard classes can pull their data from the Comependium
             } else {
                 getCompendiumPage(v.class, (pages) => {
@@ -9814,28 +9853,4 @@ gear tab ala core/bio/spells tabs.
             };
         });
     };
-
-    on("mancer:cancel", function(eventinfo) {
-        if(!eventinfo["value"]) {return;};
-        var update = {};
-
-        if(eventinfo["value"] === "l1-welcome" || eventinfo["value"] === "l1-cancel") {
-            update["l1mancer_status"] = "completed";
-            update["charactermancer_step"] = "l1-welcome";
-            deleteCharmancerData(["l1-welcome","l1-race","l1-class","l1-abilities","l1-background","l1-equipment","l1-spells","l1-summary"]);
-        }
-        else if(eventinfo["value"].substring(0,3) === "l1-") {
-            update["l1mancer_status"] = eventinfo["value"];
-        }
-        else if(eventinfo["value"] === "lp-welcome" || eventinfo["value"] === "lp-cancel") {
-            update["lpmancer_status"] = "";
-            update["charactermancer_step"] = "";
-            deleteCharmancerData(["lp-welcome", "lp-levels", "lp-choices", "lp-asi", "lp-spells","lp-summary"]);
-        }
-        else if(eventinfo["value"].substring(0,3) === "lp-") {
-            update["charactermancer_step"] = "";
-            update["lpmancer_status"] = "";
-        };
-        setAttrs(update);
-    });
 </script>
