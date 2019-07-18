@@ -494,6 +494,8 @@
 	"cantrip-beam-u": "CANTRIP BEAM",
 	"slots_total-u": "SLOTS TOTAL",
 	"slots_remaining-u": "SLOTS REMAINING",
+	"filler1-u": "",
+	"filler2-u": "",
 	"level-calculations:-u": "AUTO LEVEL CALCULATIONS:",
 	"spell_slot_modifiers-u": "SPELL SLOT MODIFIERS",
 	"lvl-u": "LEVEL",
