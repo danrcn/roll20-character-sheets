@@ -1439,8 +1439,8 @@
                     <span class="label pc-bu" data-i18n="barrier-uses-u">BARRIER USES</span>
                 </div>
                 <div class="speed">
-                    <input type="text" name="attr_bt" title="@{bt}">
-                    <span class="label" data-i18n="barrier-ticks-u">BARRIER TICKS</span>
+                    <input type="number" name="attr_barrier_ticks" title="@{barrier_ticks}">
+                    <button type="roll" name="roll_barrier_tick" value="@{wtype}&{template:simple} {{rname=^{barrier-absorb-u}}} {{r1=[[1d8]]}} {{normal=1}} @{charname_output}" data-i18n="barrier-ticks-u">BARRIER TICKS</button>
                 </div>
             </div>
             <div class="hdice-dsaves-container" style="width: 242px;">
@@ -1450,7 +1450,7 @@
                         <input type="text" name="attr_hit_dice_max" title="@{hit_dice_max}">
                     </div>
                     <input type="number" name="attr_hit_dice" title="@{hit_dice}" style="margin-bottom: -6px;">
-                    <button type="roll" name="roll_hit_dice" value="@{wtype}&{template:simple} {{rname=^{hit-dice-u}}} {{mod=D@{hitdie_final}+[[@{constitution_mod}[CON]]]}} {{r1=[[1d@{hitdie_final}+[[@{constitution_mod}]][CON]]]}} {{normal=1}} @{charname_output}" data-i18n="hit-dice-u">HIT DICE</button>
+                    <button type="roll" name="roll_hit_dice" value="@{wtype}&{template:barrier} {{rname=^{hit-dice-u}}} {{mod=D@{hitdie_final}+[[@{constitution_mod}[CON]]]}} {{r1=[[1d@{hitdie_final}+[[@{constitution_mod}]][CON]]]}} {{normal=1}} @{charname_output}" data-i18n="hit-dice-u">HIT DICE</button>
                 </div>
                 <div class="subcontainer" style="float: right;">
                     <div class="row-container">
@@ -2322,8 +2322,8 @@
                         </div>
                         <div class="display">
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
-                            <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+							<button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
+								<img name="powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -2543,7 +2543,7 @@
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
                             <input type="checkbox" name="attr_spellprepared" value="1" class="sheet-prep-box"><span class="prep"></span>
                             <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+								<img name="powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -2560,7 +2560,6 @@
                     </div>
                 </fieldset>
             </div>
-
         </div>
         <div class="col col2">
 
@@ -2764,7 +2763,7 @@
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
                             <input type="checkbox" name="attr_spellprepared" value="1" class="sheet-prep-box"><span class="prep"></span>
                             <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+								<img name="powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -2982,7 +2981,7 @@
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
                             <input type="checkbox" name="attr_spellprepared" value="1" class="sheet-prep-box"><span class="prep"></span>
                             <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+								<img name="powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -2999,7 +2998,6 @@
                     </div>
                 </fieldset>
             </div>
-
         </div>
         <div class="col col3">
 
@@ -3204,7 +3202,7 @@
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
                             <input type="checkbox" name="attr_spellprepared" value="1" class="sheet-prep-box"><span class="prep"></span>
                             <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+								<img name="powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -3422,7 +3420,7 @@
                             <input type="hidden" name="attr_rollcontent" value="@{wtype}&{template:spell} {{level=@{spellschool} @{spelllevel}}}  {{name=@{spellname}}} {{castingtime=@{spellcastingtime}}} {{range=@{spellrange}}} {{target=@{spelltarget}}} @{spell_primer} @{spell_detonator} @{primer-c) {{duration=@{spellduration}}} {{description=@{spelldescription}}} {{athigherlevels=@{spellathigherlevels}}} {{sadvance=@{spelladvancement}}} {{innate=@{innate}}} @{spellconcentration} @{charname_output}">
                             <input type="checkbox" name="attr_spellprepared" value="1" class="sheet-prep-box"><span class="prep"></span>
                             <button class="spellcard" type="roll" name="roll_spell" value="@{rollcontent}">
-								<img src="https://n7.world/images/spells/combat.svg" style="width: 15px; height: 15px; padding: 2px;">
+								<img name="attr_powertype" src="#" style="width: 15px; height: 15px; padding: 2px;">
                                 <span class="spellname" name="attr_spellname"></span>
                                 <input class="innate_flag" type="hidden" name="attr_innate" value="">
                                 <span class="innate" name="attr_innate"></span>
@@ -5154,6 +5152,93 @@
                 </div>
             {{/damage}}
     </rolltemplate>
+	
+	<rolltemplate class="sheet-rolltemplate-barrier">
+        <div class="container">
+            <div class="result">
+                {{#always}}
+                    <div class="adv">
+                        <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                    </div>
+                    <div class="advspacer"></div>
+                    <div class="adv">
+                        <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                    </div>
+                {{/always}}
+                {{#normal}}
+                    <div class="solo">
+                        <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                    </div>
+                {{/normal}}
+                {{#advantage}}
+                    {{#rollLess() r1 r2}}
+                        <div class="adv">
+                            <span class="grey">{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollLess() r1 r2}}
+                    {{#rollTotal() r1 r2}}
+                        <div class="adv">
+                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollTotal() r1 r2}}
+                    {{#rollGreater() r1 r2}}
+                        <div class="adv">
+                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span class="grey">{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollGreater() r1 r2}}
+                {{/advantage}}
+                {{#disadvantage}}
+                    {{#rollLess() r1 r2}}
+                        <div class="adv">
+                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span class="grey">{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollLess() r1 r2}}
+                    {{#rollTotal() r1 r2}}
+                        <div class="adv">
+                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollTotal() r1 r2}}
+                    {{#rollGreater() r1 r2}}
+                        <div class="adv">
+                            <span class="grey">{{r1}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                        <div class="advspacer"></div>
+                        <div class="adv">
+                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
+                        </div>
+                    {{/rollGreater() r1 r2}}
+                {{/disadvantage}}
+            </div>
+            <div class="label">
+                <span>{{rname}}{{#mod}} <span>({{mod}})</span>{{/mod}}</span>
+            </div>
+            {{#charname}}
+                <div class="charname">
+                    <span>{{charname}}</span>
+                </div>
+            {{/charname}}
+        </div>
+	</rolltemplate>
 </div>
 
 <!-- WORKERS -->
@@ -5555,7 +5640,7 @@
         update_ac();
     });
 
-   ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5','spell-6','spell-7','spell-8','spell-9'].forEach(attr => {
+   ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5'].forEach(attr => {
         on(`change:repeating_${attr}:includedesc change:repeating_${attr}:innate change:repeating_${attr}:spell_ability change:repeating_${attr}:spell_updateflag change:repeating_${attr}:spellathigherlevels change:repeating_${attr}:spellattack change:repeating_${attr}:spelldamage change:repeating_${attr}:spelldamage2 change:repeating_${attr}:spelldamagetype change:repeating_${attr}:spelldamagetype2 change:repeating_${attr}:spelldescription change:repeating_${attr}:spelldmgmod change:repeating_${attr}:spellhealing change:repeating_${attr}:spellhlbonus change:repeating_${attr}:spellhldie change:repeating_${attr}:spellhldietype change:repeating_${attr}:spellname change:repeating_${attr}:spellprepared change:repeating_${attr}:spellrange change:repeating_${attr}:spellsave change:repeating_${attr}:spellsavesuccess change:repeating_${attr}:spelltarget change:repeating_${attr}:spell_damage_progression`, (eventinfo) => {
             if (eventinfo.sourceType && eventinfo.sourceType === "sheetworker") { return; }
 
@@ -5570,7 +5655,7 @@
         });
     });
 
-    ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5','spell-6','spell-7','spell-8','spell-9'].forEach(attr => {
+    ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5'].forEach(attr => {
         on(`change:repeating_${attr}:spelloutput`, (eventinfo) => {
             if(eventinfo.sourceType && eventinfo.sourceType === "sheetworker") {return;}
 
@@ -5592,7 +5677,7 @@
         });
     });
 
-    ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5','spell-6','spell-7','spell-8','spell-9'].forEach(attr => {
+    ['spell-cantrip','spell-1','spell-2','spell-3','spell-4','spell-5'].forEach(attr => {
         on(`change:repeating_${attr}:spellathigherlevels`, (eventinfo) => {
             if(eventinfo.sourceType && eventinfo.sourceType === "sheetworker") {return;}
 
@@ -5614,7 +5699,7 @@
         let update = {};
 
         if (higherlevels) {
-            for(i = 0; i < 10-lvl; i++) {
+            for(i = 0; i < 6-lvl; i++) {
                 let tot = parseInt(i, 10) + parseInt(lvl, 10);
                 spelllevel = spelllevel + "|Level " + tot + "," + tot;
             }
