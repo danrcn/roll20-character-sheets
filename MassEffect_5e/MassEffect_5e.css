@@ -1115,7 +1115,7 @@ button[type=roll] * {
 .sheet-textbox:hover > .sheet-options-flag + span,
 .sheet-proficiency:hover .sheet-options-flag + span,
 .sheet-item:hover .sheet-inventorysubflag + span,
-.sheet-coin:hover .sheet-inventorysubflag + span,
+.sheet-coin:hover .sheet-inventorysublag + span,
 .sheet-pc .sheet-trait:hover .sheet-output,
 .sheet-pc .sheet-header:hover .sheet-options-flag + span
 {
@@ -1439,8 +1439,6 @@ span.sheet-spellconcentration
     width: auto;
 }
 
-.sheet-spell .sheet-display .sheet-p,
-.sheet-spell .sheet-display .sheet-d,
 .sheet-spell .sheet-display .sheet-c,
 .sheet-spell .sheet-display .sheet-fi,
 .sheet-spell .sheet-display .sheet-fo,
@@ -1450,22 +1448,14 @@ span.sheet-spellconcentration
     display: none;
 }
 
-.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-p:not([value="0"]) ~ .sheet-componentscontainer span.sheet-p, 
-.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-d:not([value="0"]) ~ .sheet-componentscontainer span.sheet-d
-{
-	display: inline;
-	right: 0;
-	font-size:8px;
-}
-
-.sheet-spellicon_flag:not[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-c:not([value="0"]) ~ .sheet-componentscontainer span.sheet-c, 
-.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-fi:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fi,
-.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-fo:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fo,
-.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-l:not([value="0"]) ~ .sheet-componentscontainer span.sheet-l,
-.sheet-spellicon_flag:not[value="none"] + .sheet-body .sheet-spell .sheet-display input.sheet-n:not([value="0"]) ~ .sheet-componentscontainer span.sheet-n 
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-c:not([value="0"]) ~ .sheet-componentscontainer span.sheet-c, 
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-fi:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fi,
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-fo:not([value="0"]) ~ .sheet-componentscontainer span.sheet-fo,
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-l:not([value="0"]) ~ .sheet-componentscontainer span.sheet-l,
+.sheet-spellicon_flag[value="all"] + .sheet-body .sheet-spell .sheet-display input.sheet-n:not([value="0"]) ~ .sheet-componentscontainer span.sheet-n 
 {
     display: inline;
-	right: 1;
+    width: initial;
     font-size: 8px;
 }
 
@@ -2174,7 +2164,7 @@ span.sheet-spellconcentration
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: center;
-    width: 100%;
+    width: 81%;
 }
 
 .sheet-rolltemplate-atk .sheet-desc span,
@@ -3015,11 +3005,11 @@ span.sheet-spellconcentration
 }
 
 .sheet-item .sheet-name {
-    width: 190px;
+    width: 160px;
 }
 
 .sheet-item input[type="text"].sheet-weight {
-    width: 24px;
+    width: 25px;
     text-align: center;
 }
 
@@ -3030,7 +3020,7 @@ span.sheet-spellconcentration
 	text-align: left;
     background-color: transparent;
     padding: 0px;
-    width: 130px;
+    width: 112px;
 }
 
 .sheet-item .sheet-subitem .sheet-subtextarea,
@@ -3048,8 +3038,6 @@ span.sheet-spellconcentration
 .sheet-equipment .sheet-weighttotal {
     position: relative;
     left: 0px;
-    top: 160px;
-    width: 70px;
 }
 
 .sheet-equipment .sheet-weighttotal input {

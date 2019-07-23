@@ -1439,8 +1439,8 @@
                     <span class="label pc-bu" data-i18n="barrier-uses-u">BARRIER USES</span>
                 </div>
                 <div class="speed">
-                    <input type="number" name="attr_barrier_ticks" title="@{barrier_ticks}">
-                    <button type="roll" name="roll_barrier_tick" value="@{wtype}&{template:simple} {{rname=^{barrier-absorb-u}}} {{r1=[[1d8]]}} {{normal=1}} @{charname_output}" data-i18n="barrier-ticks-u">BARRIER TICKS</button>
+                    <input type="text" name="attr_bt" title="@{bt}">
+                    <span class="label" data-i18n="barrier-ticks-u">BARRIER TICKS</span>
                 </div>
             </div>
             <div class="hdice-dsaves-container" style="width: 242px;">
@@ -1450,7 +1450,7 @@
                         <input type="text" name="attr_hit_dice_max" title="@{hit_dice_max}">
                     </div>
                     <input type="number" name="attr_hit_dice" title="@{hit_dice}" style="margin-bottom: -6px;">
-                    <button type="roll" name="roll_hit_dice" value="@{wtype}&{template:barrier} {{rname=^{hit-dice-u}}} {{mod=D@{hitdie_final}+[[@{constitution_mod}[CON]]]}} {{r1=[[1d@{hitdie_final}+[[@{constitution_mod}]][CON]]]}} {{normal=1}} @{charname_output}" data-i18n="hit-dice-u">HIT DICE</button>
+                    <button type="roll" name="roll_hit_dice" value="@{wtype}&{template:simple} {{rname=^{hit-dice-u}}} {{mod=D@{hitdie_final}+[[@{constitution_mod}[CON]]]}} {{r1=[[1d@{hitdie_final}+[[@{constitution_mod}]][CON]]]}} {{normal=1}} @{charname_output}" data-i18n="hit-dice-u">HIT DICE</button>
                 </div>
                 <div class="subcontainer" style="float: right;">
                     <div class="row-container">
@@ -1810,6 +1810,15 @@
 				</div>
                 <input type="hidden" class="inventoryflag" name="attr_simpleinventory" value="complex">
                 <textarea class="simple" name="attr_equipment"></textarea>
+                    <div class="weighttotal">
+                        <span class="label" data-i18n="total-weight-u">TOTAL WEIGHT</span>
+                        <input type="text" name="attr_weighttotal" value="0">
+                        <input type="hidden" class="encumberance" name="attr_encumberance">
+                        <span class="encumb immobile" data-i18n="immobile-u">IMMOBILE</span>
+                        <span class="encumb heavily" data-i18n="heavily-encumbered-u">HEAVILY ENCUMBERED</span>
+                        <span class="encumb encumbered" data-i18n="encumbered-u">ENCUMBERED</span>
+                        <span class="encumb over" data-i18n="over-carrying-cap-u">OVER CARRYING CAPACITY</span>
+                    </div>
                 <div class="complex">
                     <input type="hidden" class="warningflag" name="attr_armorwarningflag">
                     <div class="warning">
@@ -1832,12 +1841,14 @@
                     <div class="header" style="height: auto;">
                         <span class="pictos" style="width: 25px; font-size: 15px;">*</span>
                         <span style="width: 100px; text-align: left;" data-i18n="item-name-u">ITEM NAME</SPAN>
+                        <span style="width: 25px;"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/5th%20Edition%20OGL%20by%20Roll20/images/weight_lbs.png" style="width: 15px; margin-bottom: -3px;" alt="Weight symbol"></span>
                     </div>
                     <fieldset class="repeating_inventory">
                         <input type="hidden" class="equippedflag" name="attr_equipped">
                         <div class="item">
                             <input class="weight" type="text" name="attr_itemcount" value="1">
                             <input class="name" type="text" name="attr_itemname">
+                            <input class="weight" type="text" name="attr_itemweight">
                             <input class="inventorysubflag" type="checkbox" name="attr_inventorysubflag"><span>i</span>
                             <div class="subitem">
                                 <input class="equipped" type="checkbox" name="attr_equipped" value="1" checked="checked">
@@ -5152,93 +5163,6 @@
                 </div>
             {{/damage}}
     </rolltemplate>
-	
-	<rolltemplate class="sheet-rolltemplate-barrier">
-        <div class="container">
-            <div class="result">
-                {{#always}}
-                    <div class="adv">
-                        <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                    </div>
-                    <div class="advspacer"></div>
-                    <div class="adv">
-                        <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                    </div>
-                {{/always}}
-                {{#normal}}
-                    <div class="solo">
-                        <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                    </div>
-                {{/normal}}
-                {{#advantage}}
-                    {{#rollLess() r1 r2}}
-                        <div class="adv">
-                            <span class="grey">{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollLess() r1 r2}}
-                    {{#rollTotal() r1 r2}}
-                        <div class="adv">
-                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollTotal() r1 r2}}
-                    {{#rollGreater() r1 r2}}
-                        <div class="adv">
-                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span class="grey">{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollGreater() r1 r2}}
-                {{/advantage}}
-                {{#disadvantage}}
-                    {{#rollLess() r1 r2}}
-                        <div class="adv">
-                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span class="grey">{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollLess() r1 r2}}
-                    {{#rollTotal() r1 r2}}
-                        <div class="adv">
-                            <span>{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollTotal() r1 r2}}
-                    {{#rollGreater() r1 r2}}
-                        <div class="adv">
-                            <span class="grey">{{r1}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                        <div class="advspacer"></div>
-                        <div class="adv">
-                            <span>{{r2}}{{#global}} + {{global}}{{/global}}</span>
-                        </div>
-                    {{/rollGreater() r1 r2}}
-                {{/disadvantage}}
-            </div>
-            <div class="label">
-                <span>{{rname}}{{#mod}} <span>({{mod}})</span>{{/mod}}</span>
-            </div>
-            {{#charname}}
-                <div class="charname">
-                    <span>{{charname}}</span>
-                </div>
-            {{/charname}}
-        </div>
-	</rolltemplate>
 </div>
 
 <!-- WORKERS -->
@@ -5699,7 +5623,7 @@
         let update = {};
 
         if (higherlevels) {
-            for(i = 0; i < 6-lvl; i++) {
+            for(i = 0; i < 10-lvl; i++) {
                 let tot = parseInt(i, 10) + parseInt(lvl, 10);
                 spelllevel = spelllevel + "|Level " + tot + "," + tot;
             }
@@ -5954,6 +5878,23 @@
         update_leveler_display();
     });
 
+	on("change:repeating_spell-cantrip change:repeating_spell-1 change:repeating_spell-2 change:repeating_spell-3 change:repeating_spell-4 change:repeating_spell-5", function(eventinfo){
+		getAttrs(["spellschool","powertype", "spelllevel", "spellid"], function(v) {
+			const repeating_spell  = `repeating_spell-${"spelllevel"}_${"spellid"}`;
+			var spell_school = spellschool.toLowerCase();
+			repeating_spell.forEach(
+			if(spell_school === "biotic") {
+				document.getElementByName("powertype").src = "https://github.com/danrcn/roll20-character-sheets/blob/master/MassEffect_5e/biotic.svg";
+			} else if(spell_school === "combat") {
+				document.getElementByName("powertype").src = "https://github.com/danrcn/roll20-character-sheets/blob/master/MassEffect_5e/combat.svg";
+			} else if(spell_school === "tech") {
+				document.getElementByName("powertype").src = "https://github.com/danrcn/roll20-character-sheets/blob/master/MassEffect_5e/tech.svg";
+			} else {
+				return;
+			})
+		});
+	});
+	
     var update_attr = function(attr) {
         var update = {};
         var attr_fields = [attr + "_base",attr + "_bonus"];
