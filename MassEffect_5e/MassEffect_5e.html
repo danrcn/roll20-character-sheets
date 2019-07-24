@@ -1439,8 +1439,8 @@
                     <span class="label pc-bu" data-i18n="barrier-uses-u">BARRIER USES</span>
                 </div>
                 <div class="speed">
-                    <input type="text" name="attr_bt" title="@{bt}">
-                    <span class="label" data-i18n="barrier-ticks-u">BARRIER TICKS</span>
+                    <input type="number" name="attr_barrier_ticks" title="@{barrier_ticks}">
+                    <button type="roll" name="roll_barrier_tick" value="@{wtype}&{template:simple} {{rname=^{barrier-absorb-u}}} {{r1=[[1d8]]}} {{normal=1}} @{charname_output}" data-i18n="barrier-ticks-u">BARRIER TICKS</button>
                 </div>
             </div>
             <div class="hdice-dsaves-container" style="width: 242px;">
@@ -5623,7 +5623,7 @@
         let update = {};
 
         if (higherlevels) {
-            for(i = 0; i < 10-lvl; i++) {
+            for(i = 0; i < 6-lvl; i++) {
                 let tot = parseInt(i, 10) + parseInt(lvl, 10);
                 spelllevel = spelllevel + "|Level " + tot + "," + tot;
             }

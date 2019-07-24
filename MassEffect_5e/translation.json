@@ -14,6 +14,7 @@
 	"shield-regen-u": "SHIELD REGEN",
 	"barrier-uses-u": "BARRIER USES",
 	"barrier-ticks-u": "BARRIER TICKS",
+	"barrier-absorb-u": "DAMAGE ABSORBED",
 	"formula-u": "FORMULA",
 	"speed-u": "SPEED",
 	"npc-speed-place": "30 ft., fly 60ft.",
